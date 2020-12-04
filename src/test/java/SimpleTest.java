@@ -10,15 +10,17 @@ public class SimpleTest {
     @Test
     public void simpleTest() throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "d:/Work/Projects/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:/exe.files/chromedriver.exe");
 
         WebDriver browser = new ChromeDriver();
         browser.get("https://github.com/SergeiDemyanenko/PlatformaticaQA");
         WebElement name = browser.findElement(By.xpath("//strong/a"));
 
         Assert.assertEquals(name.getText(), "PlatformaticaQA");
-
         Thread.sleep(3000);
+        browser.findElement(By.xpath("//a[contains(text(),'PlatformaticaQA')]")).click();
+        Thread.sleep(3000);
+
         browser.close();
     }
 }
