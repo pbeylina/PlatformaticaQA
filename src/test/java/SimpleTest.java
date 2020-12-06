@@ -32,4 +32,14 @@ public class SimpleTest extends BaseTest {
         Assert.assertEquals(input.getAttribute("value"), "https://github.com/SergeiDemyanenko/PlatformaticaQA.git");
     }
 
+    @Test
+    public void speedTest() throws InterruptedException {
+        WebDriver driver = getDriver();
+        driver.get("https://www.speedtest.net/");
+
+        Thread.sleep(10000);
+        WebElement button = driver.findElement(By.xpath("//span[@class='start-text']"));
+        button.click();
+        Thread.sleep(35000);
+    }
 }
