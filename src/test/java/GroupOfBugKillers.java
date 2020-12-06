@@ -28,9 +28,9 @@ public class GroupOfBugKillers extends BaseTest {
         WebElement button = driver.findElement(By.xpath("//a[normalize-space()='Sign in']"));
         button.click();
         WebElement userNameField = driver.findElement(By.xpath("//input[@id='login_field']"));
-        userNameField.sendKeys("userName");
+        userNameField.sendKeys("userName"); // input real User Name
         WebElement passField = driver.findElement(By.xpath("//input[@id='password']"));
-        passField.sendKeys("password");
+        passField.sendKeys("password"); // input real Password
         Thread.sleep(2000);
         WebElement signInButton = driver.findElement(By.xpath("//input[@value='Sign in']"));
         signInButton.click();
