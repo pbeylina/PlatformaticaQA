@@ -1,3 +1,4 @@
+import okhttp3.Handshake;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,4 +19,18 @@ public class SimpleTest extends BaseTest {
 
         Thread.sleep(3000);
     }
+
+    @Test
+    public void descriptionTest()throws InterruptedException{
+
+        WebDriver driver = getDriver();
+        driver.get("https://github.com/SergeiDemyanenko/PlatformaticaQA");
+
+        WebElement header = driver.findElement(By.xpath("//div//h2[.='About']"));
+
+        Assert.assertEquals(header.getText(),"About");
+
+        Thread.sleep(1000);
+    }
 }
+
