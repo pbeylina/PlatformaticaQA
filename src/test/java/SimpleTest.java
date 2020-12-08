@@ -20,17 +20,5 @@ public class SimpleTest extends BaseTest {
         Thread.sleep(3000);
     }
 
-    @Test
-    public void descriptionTest()throws InterruptedException{
-
-        WebDriver driver = getDriver();
-        driver.get("https://github.com/SergeiDemyanenko/PlatformaticaQA");
-
-        WebElement header = driver.findElement(By.xpath("//div//h2[.='About']"));
-
-        Assert.assertEquals(header.getText(),"About");
-
-        Thread.sleep(1000);
-    }
 }
 
