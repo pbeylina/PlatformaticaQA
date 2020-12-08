@@ -5,19 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
-public class GroupOfBugKillers extends BaseTest {
-
-    @Test
-    public void denSpeedTest() throws InterruptedException {
-
-        WebDriver driver = getDriver();
-        driver.get("https://www.speedtest.net/");
-
-        Thread.sleep(10000);
-        WebElement button = driver.findElement(By.xpath("//span[@class='start-text']"));
-        button.click();
-        Thread.sleep(35000);
-    }
+public class DenFromGroupOfBugKillers extends BaseTest {
 
     @Test
     public void denXPathTestForPulls() throws InterruptedException {
@@ -79,3 +67,4 @@ public class GroupOfBugKillers extends BaseTest {
         pullRequestsButton.click();
     }
 }
+
