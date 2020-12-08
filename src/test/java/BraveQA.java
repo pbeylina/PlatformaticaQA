@@ -153,4 +153,33 @@ public class BraveQA extends BaseTest {
 
     }
 
+    @Test
+    public void ZEDTransformaticaLoginUser4() throws InterruptedException {
+
+//      Login into Transformatica QA enironment with User4 credentials
+
+        String Url = "https://ref.eteam.work";
+        String Email = "user4@tester.com";
+        String pass = "CoBX8ym0T7";
+        String expected = "Tasks for User 4";
+
+        WebDriver driver = getDriver();
+        driver.get(Url);
+        Thread.sleep(1000);
+
+        driver.findElement(By.xpath("//*[contains(@placeholder,'Login name')]")).sendKeys(Email);
+        Thread.sleep(500);
+
+        driver.findElement(By.xpath("//*[contains(@placeholder,'Password')]")).sendKeys(pass);
+        Thread.sleep(500);
+
+        driver.findElement(By.xpath("//*[@type='submit']")).click();
+        Thread.sleep(1000);
+
+        driver.findElement(By.xpath("//p[contains(text(),'Assignments')]")).click();
+        Thread.sleep(500);
+
+        String actual = driver.findElement(By.xpath("//h3[contains(text(),'Tasks for ')]")).getText();
+        Assert.assertEquals(actual, expected);
+    }
 }
