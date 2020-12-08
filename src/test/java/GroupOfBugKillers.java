@@ -20,7 +20,7 @@ public class GroupOfBugKillers extends BaseTest {
     }
 
     @Test
-    public void denXPathTest() throws InterruptedException {
+    public void denXPathTestForPulls() throws InterruptedException {
         WebDriver driver = getDriver();
         driver.get("https://github.com/SergeiDemyanenko/PlatformaticaQA");
 
@@ -36,6 +36,26 @@ public class GroupOfBugKillers extends BaseTest {
         signInButton.click();
 
         WebElement pullRequestsButton = driver.findElement(By.xpath("//a[@href= '/pulls']"));
+        pullRequestsButton.click();
+    }
+
+    @Test
+    public void denXPathTestForIssues() throws InterruptedException {
+        WebDriver driver = getDriver();
+        driver.get("https://github.com/SergeiDemyanenko/PlatformaticaQA");
+
+        Thread.sleep(2000);
+        WebElement button = driver.findElement(By.xpath("//a[normalize-space()='Sign in']"));
+        button.click();
+        WebElement userNameField = driver.findElement(By.xpath("//input[@id='login_field']"));
+        userNameField.sendKeys("DenHubPy"); // input real User Name
+        WebElement passField = driver.findElement(By.xpath("//input[@id='password']"));
+        passField.sendKeys("!q2W3E4R5T6Y7U8I9O0P"); // input real Password
+        Thread.sleep(2000);
+        WebElement signInButton = driver.findElement(By.xpath("//input[@value='Sign in']"));
+        signInButton.click();
+
+        WebElement pullRequestsButton = driver.findElement(By.xpath("//a[@href= '/issues']"));
         pullRequestsButton.click();
     }
 }
