@@ -67,3 +67,4 @@ public class DenFromGroupOfBugKillers extends BaseTest {
         pullRequestsButton.click();
     }
 }
+
