@@ -28,14 +28,14 @@ public class GroupOfBugKillers extends BaseTest {
         WebElement button = driver.findElement(By.xpath("//a[normalize-space()='Sign in']"));
         button.click();
         WebElement userNameField = driver.findElement(By.xpath("//input[@id='login_field']"));
-        userNameField.sendKeys("userName"); // input real User Name
+        userNameField.sendKeys("DenHubPy"); // input real User Name
         WebElement passField = driver.findElement(By.xpath("//input[@id='password']"));
-        passField.sendKeys("password"); // input real Password
+        passField.sendKeys("!q2W3E4R5T6Y7U8I9O0P"); // input real Password
         Thread.sleep(2000);
         WebElement signInButton = driver.findElement(By.xpath("//input[@value='Sign in']"));
         signInButton.click();
 
-        WebElement pullRequestsButton = driver.findElement(By.xpath("//a[@aria-label='Pull requests you created']"));
+        WebElement pullRequestsButton = driver.findElement(By.xpath("//a[@href= '/pulls']"));
         pullRequestsButton.click();
     }
 }
